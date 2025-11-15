@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bm52o7e36wjhh"
+path="res://.godot/imported/shelf_clickmask.png-5b2c3c2f46641b8b4736ebdb160c66ad.res"
+
+[deps]
+
+source_file="res://assets/shelf_clickmask.png"
+dest_files=["res://.godot/imported/shelf_clickmask.png-5b2c3c2f46641b8b4736ebdb160c66ad.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

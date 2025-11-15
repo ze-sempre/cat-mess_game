@@ -1,0 +1,63 @@
+[gd_scene load_steps=13 format=3 uid="uid://bv87a5db0b5t4"]
+
+[ext_resource type="Script" uid="uid://c3m5qqgtt2ri2" path="res://bedroom.gd" id="1_iwj3i"]
+[ext_resource type="Texture2D" uid="uid://c2ditv7ecmukk" path="res://assets/room_walls.png" id="1_j12bj"]
+[ext_resource type="Texture2D" uid="uid://blfmw25d82nu6" path="res://assets/bed.png" id="2_4ken1"]
+[ext_resource type="Texture2D" uid="uid://b0ehqhd4w1s7l" path="res://assets/bed_hover.png" id="3_m2b15"]
+[ext_resource type="BitMap" uid="uid://chiajsyiqhi3p" path="res://assets/bed_clickmask.png" id="4_dhkfy"]
+[ext_resource type="Texture2D" uid="uid://dcdil81ojff0" path="res://assets/shelf.png" id="5_iwj3i"]
+[ext_resource type="Texture2D" uid="uid://iybs3is2fuwa" path="res://assets/shelf_hover.png" id="6_jsdaq"]
+[ext_resource type="BitMap" uid="uid://bm52o7e36wjhh" path="res://assets/shelf_clickmask.png" id="7_w5t4u"]
+[ext_resource type="Texture2D" uid="uid://durp5wcmv7wro" path="res://assets/cat.png" id="8_4cxt4"]
+[ext_resource type="Texture2D" uid="uid://c5gdb8a2yh4j5" path="res://assets/cardboard_box.png" id="8_dhkfy"]
+[ext_resource type="Texture2D" uid="uid://bpybipmb7g31m" path="res://assets/cardboard_box_hover.png" id="9_iwj3i"]
+[ext_resource type="BitMap" uid="uid://bt7pikoooay70" path="res://assets/cardboard_box_clickmask.png" id="10_jsdaq"]
+
+[node name="bedroom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwj3i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j12bj")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_4ken1")
+texture_hover = ExtResource("3_m2b15")
+texture_click_mask = ExtResource("4_dhkfy")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("5_iwj3i")
+texture_hover = ExtResource("6_jsdaq")
+texture_click_mask = ExtResource("7_w5t4u")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("8_dhkfy")
+texture_hover = ExtResource("9_iwj3i")
+texture_click_mask = ExtResource("10_jsdaq")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(1090, 1997)
+texture = ExtResource("8_4cxt4")

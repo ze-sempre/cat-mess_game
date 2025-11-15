@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://chiajsyiqhi3p"
+path="res://.godot/imported/bed_clickmask.png-f9b0eeaf55f75022eafd1d917cfae634.res"
+
+[deps]
+
+source_file="res://assets/bed_clickmask.png"
+dest_files=["res://.godot/imported/bed_clickmask.png-f9b0eeaf55f75022eafd1d917cfae634.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

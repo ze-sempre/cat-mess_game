@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bt7pikoooay70"
+path="res://.godot/imported/cardboard_box_clickmask.png-e5895304f90c35250f39feb79d4131d8.res"
+
+[deps]
+
+source_file="res://assets/cardboard_box_clickmask.png"
+dest_files=["res://.godot/imported/cardboard_box_clickmask.png-e5895304f90c35250f39feb79d4131d8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
