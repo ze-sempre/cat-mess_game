@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv87a5db0b5t4"]
+[gd_scene load_steps=19 format=3 uid="uid://bv87a5db0b5t4"]
 
 [ext_resource type="Script" uid="uid://c3m5qqgtt2ri2" path="res://bedroom.gd" id="1_iwj3i"]
 [ext_resource type="Texture2D" uid="uid://c2ditv7ecmukk" path="res://assets/room_walls.png" id="1_j12bj"]
@@ -7,11 +7,36 @@
 [ext_resource type="BitMap" uid="uid://chiajsyiqhi3p" path="res://assets/bed_clickmask.png" id="4_dhkfy"]
 [ext_resource type="Texture2D" uid="uid://dcdil81ojff0" path="res://assets/shelf.png" id="5_iwj3i"]
 [ext_resource type="Texture2D" uid="uid://iybs3is2fuwa" path="res://assets/shelf_hover.png" id="6_jsdaq"]
+[ext_resource type="Script" uid="uid://bxb12kovkamqg" path="res://objects.gd" id="6_mypif"]
 [ext_resource type="BitMap" uid="uid://bm52o7e36wjhh" path="res://assets/shelf_clickmask.png" id="7_w5t4u"]
 [ext_resource type="Texture2D" uid="uid://durp5wcmv7wro" path="res://assets/cat.png" id="8_4cxt4"]
 [ext_resource type="Texture2D" uid="uid://c5gdb8a2yh4j5" path="res://assets/cardboard_box.png" id="8_dhkfy"]
 [ext_resource type="Texture2D" uid="uid://bpybipmb7g31m" path="res://assets/cardboard_box_hover.png" id="9_iwj3i"]
 [ext_resource type="BitMap" uid="uid://bt7pikoooay70" path="res://assets/cardboard_box_clickmask.png" id="10_jsdaq"]
+[ext_resource type="Script" uid="uid://dix55ia86qduo" path="res://ui.gd" id="13_4cxt4"]
+[ext_resource type="Texture2D" uid="uid://bt6bucj74mgsx" path="res://assets/panel_texture.png" id="13_w5t4u"]
+[ext_resource type="FontFile" uid="uid://ducxhd0pij1vr" path="res://GamjaFlower-Regular.ttf" id="14_w5t4u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mypif"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+texture = ExtResource("13_w5t4u")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+region_rect = Rect2(0, 0, 256, 256)
+
+[sub_resource type="Theme" id="Theme_iwj3i"]
+default_font = ExtResource("14_w5t4u")
+default_font_size = 128
+MarginContainer/constants/margin_bottom = 128
+MarginContainer/constants/margin_left = 128
+MarginContainer/constants/margin_right = 128
+MarginContainer/constants/margin_top = 128
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_mypif")
 
 [node name="bedroom" type="Control"]
 layout_mode = 3
@@ -31,7 +56,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_j12bj")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="bed" type="TextureButton" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,23 +67,56 @@ grow_vertical = 2
 texture_normal = ExtResource("2_4ken1")
 texture_hover = ExtResource("3_m2b15")
 texture_click_mask = ExtResource("4_dhkfy")
+script = ExtResource("6_mypif")
+metadata/_custom_type_script = "uid://bxb12kovkamqg"
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="shelf" type="TextureButton" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 2160.0
+offset_bottom = 2160.0
 texture_normal = ExtResource("5_iwj3i")
 texture_hover = ExtResource("6_jsdaq")
 texture_click_mask = ExtResource("7_w5t4u")
+script = ExtResource("6_mypif")
+metadata/_custom_type_script = "uid://bxb12kovkamqg"
 
-[node name="TextureButton3" type="TextureButton" parent="."]
+[node name="carboard_box" type="TextureButton" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 2160.0
+offset_bottom = 2160.0
 texture_normal = ExtResource("8_dhkfy")
 texture_hover = ExtResource("9_iwj3i")
 texture_click_mask = ExtResource("10_jsdaq")
+script = ExtResource("6_mypif")
+metadata/_custom_type_script = "uid://bxb12kovkamqg"
 
 [node name="Cat" type="Sprite2D" parent="."]
 position = Vector2(1090, 1997)
 texture = ExtResource("8_4cxt4")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("13_4cxt4")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_iwj3i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="status_label" type="Label" parent="UI/MarginContainer/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "that's a bed"

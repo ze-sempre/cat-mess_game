@@ -4,6 +4,10 @@ extends Control
 const cursor_click = preload("res://assets/paw_cursor_click.png")
 const cursor_normal = preload("res://assets/paw_cursor_normal.png")
 
+@onready var bed: TextureButton = $bed
+@onready var shelf: TextureButton = $shelf
+@onready var carboard_box: TextureButton = $carboard_box
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("left_mouse"):
 		Input.set_custom_mouse_cursor(cursor_click,Input.CURSOR_ARROW, Vector2(32,32))
