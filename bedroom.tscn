@@ -68,6 +68,7 @@ texture_normal = ExtResource("2_4ken1")
 texture_hover = ExtResource("3_m2b15")
 texture_click_mask = ExtResource("4_dhkfy")
 script = ExtResource("6_mypif")
+object_name = "bed"
 metadata/_custom_type_script = "uid://bxb12kovkamqg"
 
 [node name="shelf" type="TextureButton" parent="."]
@@ -79,6 +80,7 @@ texture_normal = ExtResource("5_iwj3i")
 texture_hover = ExtResource("6_jsdaq")
 texture_click_mask = ExtResource("7_w5t4u")
 script = ExtResource("6_mypif")
+object_name = "shelf"
 metadata/_custom_type_script = "uid://bxb12kovkamqg"
 
 [node name="carboard_box" type="TextureButton" parent="."]
@@ -90,6 +92,7 @@ texture_normal = ExtResource("8_dhkfy")
 texture_hover = ExtResource("9_iwj3i")
 texture_click_mask = ExtResource("10_jsdaq")
 script = ExtResource("6_mypif")
+object_name = "cardboard box"
 metadata/_custom_type_script = "uid://bxb12kovkamqg"
 
 [node name="Cat" type="Sprite2D" parent="."]
@@ -105,17 +108,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 theme = SubResource("Theme_iwj3i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/MarginContainer/HBoxContainer"]
+[node name="status_container" type="PanelContainer" parent="UI/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="status_label" type="Label" parent="UI/MarginContainer/HBoxContainer/PanelContainer"]
+[node name="status_label" type="Label" parent="UI/MarginContainer/HBoxContainer/status_container"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
