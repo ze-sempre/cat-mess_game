@@ -77,6 +77,9 @@ _data = {
 [node name="cat" type="CharacterBody2D"]
 script = ExtResource("1_oqb4x")
 move_speed = 500.0
+jump_height = 100.0
+jump_time_to_peak = 0.5
+jump_time_to_descend = 0.4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -55)
