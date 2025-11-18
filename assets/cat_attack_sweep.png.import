@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://durp5wcmv7wro"
-path="res://.godot/imported/cat.png-74418c656f64bad1813a4e0137c5108d.ctex"
+uid="uid://dt7c5lxyoevfu"
+path="res://.godot/imported/cat_attack_sweep.png-e48c9597b044a8cf5aa2a58e73626d9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat.png"
-dest_files=["res://.godot/imported/cat.png-74418c656f64bad1813a4e0137c5108d.ctex"]
+source_file="res://assets/cat_attack_sweep.png"
+dest_files=["res://.godot/imported/cat_attack_sweep.png-e48c9597b044a8cf5aa2a58e73626d9c.ctex"]
 
 [params]
 
