@@ -1,35 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4tunvm18kpk2"]
+[gd_scene load_steps=9 format=3 uid="uid://b4tunvm18kpk2"]
 
-[ext_resource type="Texture2D" uid="uid://durp5wcmv7wro" path="res://assets/cat.png" id="1_hpjk3"]
 [ext_resource type="Script" uid="uid://cpvocibyediho" path="res://player/cat.gd" id="1_oqb4x"]
+[ext_resource type="Texture2D" uid="uid://bo8ilbbdx5bli" path="res://assets/cat_body.png" id="2_jopsd"]
+[ext_resource type="Texture2D" uid="uid://brkjp2j7yhufi" path="res://assets/cat_head.png" id="3_tb7al"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqb4x"]
 radius = 55.0
 height = 154.0
-
-[sub_resource type="Animation" id="Animation_oqb4x"]
-resource_name = "walking"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.19999999, 0.39999998),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.22689280275926285, 0.0]
-}
 
 [sub_resource type="Animation" id="Animation_jopsd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("body:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,9 +22,50 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_tb7al"]
 resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_oqb4x"]
+resource_name = "walking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292519943295, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292519943295, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tb7al"]
 _data = {
@@ -51,18 +76,28 @@ _data = {
 
 [node name="cat" type="CharacterBody2D"]
 script = ExtResource("1_oqb4x")
+move_speed = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -55)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oqb4x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_hpjk3")
-offset = Vector2(0, -70)
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("2_jopsd")
+offset = Vector2(0, -136)
+flip_h = true
+
+[node name="head" type="Sprite2D" parent="."]
+texture = ExtResource("3_tb7al")
+offset = Vector2(0, -136)
 flip_h = true
 
 [node name="movement_anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tb7al")
 }
+
+[node name="jump_buffer_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
