@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bv87a5db0b5t4"]
+[gd_scene load_steps=18 format=3 uid="uid://bv87a5db0b5t4"]
 
 [ext_resource type="Script" uid="uid://c3m5qqgtt2ri2" path="res://bedroom.gd" id="1_iwj3i"]
 [ext_resource type="Texture2D" uid="uid://c2ditv7ecmukk" path="res://assets/room_walls.png" id="1_j12bj"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://iybs3is2fuwa" path="res://assets/shelf_hover.png" id="6_jsdaq"]
 [ext_resource type="Script" uid="uid://bxb12kovkamqg" path="res://objects.gd" id="6_mypif"]
 [ext_resource type="BitMap" uid="uid://bm52o7e36wjhh" path="res://assets/shelf_clickmask.png" id="7_w5t4u"]
-[ext_resource type="Texture2D" uid="uid://durp5wcmv7wro" path="res://assets/cat.png" id="8_4cxt4"]
 [ext_resource type="Texture2D" uid="uid://c5gdb8a2yh4j5" path="res://assets/cardboard_box.png" id="8_dhkfy"]
 [ext_resource type="Texture2D" uid="uid://bpybipmb7g31m" path="res://assets/cardboard_box_hover.png" id="9_iwj3i"]
 [ext_resource type="BitMap" uid="uid://bt7pikoooay70" path="res://assets/cardboard_box_clickmask.png" id="10_jsdaq"]
@@ -94,10 +93,6 @@ texture_click_mask = ExtResource("10_jsdaq")
 script = ExtResource("6_mypif")
 object_name = "cardboard box"
 metadata/_custom_type_script = "uid://bxb12kovkamqg"
-
-[node name="Cat" type="Sprite2D" parent="."]
-position = Vector2(1090, 1997)
-texture = ExtResource("8_4cxt4")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("13_4cxt4")

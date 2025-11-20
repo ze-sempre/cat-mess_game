@@ -18,6 +18,9 @@ extends CharacterBody2D
 @onready var attack_collision: CollisionShape2D = $attack_area/attack_collision
 @onready var attack_sweep: AnimatedSprite2D = $attack_sweep
 @onready var attack_anim: AnimationPlayer = $attack_anim
+@onready var attack_right: Marker2D = $attack_right
+@onready var attack_left: Marker2D = $attack_left
+@onready var attack_area: Area2D = $attack_area
 
 
 
@@ -52,10 +55,16 @@ func _physics_process(delta: float) -> void:
 	if direction > 0.0:
 		body.flip_h = true
 		head.flip_h = true
+		attack_sweep.flip_h = true
+		attack_sweep.position = attack_right.position
+		attack_area.scale = Vector2.ONE
 	elif direction < 0.0:
 		body.flip_h = false
 		head.flip_h = false
-
+		attack_sweep.flip_h = false
+		attack_sweep.position = attack_left.position
+		attack_area.scale = Vector2(-1, 1)
+		
 func get_custom_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
