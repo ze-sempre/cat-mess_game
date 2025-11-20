@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://6j4y0kfxlwaw"]
+
+[ext_resource type="Texture2D" uid="uid://dwwnx0yio6aku" path="res://assets/picture_frame.png" id="1_3hk7e"]
+[ext_resource type="Script" uid="uid://c0o2ewh0h7tb2" path="res://destroyable_objects/destroyable_object_class.gd" id="1_cj3pw"]
+[ext_resource type="PackedScene" uid="uid://l7h2f6nxoenf" path="res://destroyable_objects/shard_emitter.tscn" id="3_m5nyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hk7e"]
+size = Vector2(237, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj3pw"]
+size = Vector2(46.337265, 158.64906)
+
+[node name="picture_frame" type="Node2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+script = ExtResource("1_cj3pw")
+collision_area = NodePath("collision_area")
+shard_emitter = NodePath("Sprite2D/shard_emitter")
+metadata/_custom_type_script = "uid://c0o2ewh0h7tb2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3hk7e")
+
+[node name="shard_emitter" parent="Sprite2D" instance=ExtResource("3_m5nyy")]
+
+[node name="collision_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_area"]
+position = Vector2(-22.5, 6)
+shape = SubResource("RectangleShape2D_3hk7e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collision_area"]
+position = Vector2(104.55413, 75.938065)
+rotation = -0.34906584
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_cj3pw")

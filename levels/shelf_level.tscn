@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bfsvbtani7byu"]
+[gd_scene load_steps=6 format=4 uid="uid://bfsvbtani7byu"]
 
 [ext_resource type="Texture2D" uid="uid://cvgfi0dqe1rni" path="res://assets/tilemap_test.png" id="1_or7ay"]
 [ext_resource type="PackedScene" uid="uid://b4tunvm18kpk2" path="res://player/cat.tscn" id="2_mwfpx"]
+[ext_resource type="PackedScene" uid="uid://6j4y0kfxlwaw" path="res://destroyable_objects/shelf/picture_frame.tscn" id="3_c3rbb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwfpx"]
 texture = ExtResource("1_or7ay")
@@ -22,3 +23,6 @@ tile_set = SubResource("TileSet_c3rbb")
 
 [node name="cat" parent="." instance=ExtResource("2_mwfpx")]
 position = Vector2(398, 1884)
+
+[node name="picture_frame" parent="." instance=ExtResource("3_c3rbb")]
+position = Vector2(1763, 1846)
