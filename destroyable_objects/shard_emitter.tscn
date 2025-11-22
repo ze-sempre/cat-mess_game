@@ -8,6 +8,5 @@ nbr_of_shards = 6
 threshold = 50.0
 min_impulse = 500.0
 max_impulse = 1000.0
-display_triangles = true
 
 [node name="delete_timer" type="Timer" parent="."]

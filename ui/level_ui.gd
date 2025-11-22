@@ -19,3 +19,5 @@ func _process(delta: float) -> void:
 
 func on_object_destroyed():
 	current_object_amount -= 1
+	if current_object_amount <= 0:
+		Global.level_complete.emit()

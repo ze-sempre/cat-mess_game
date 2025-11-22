@@ -13,7 +13,7 @@ extends CharacterBody2D
 
 @onready var movement_anim: AnimationPlayer = $movement_anim
 @onready var body: AnimatedSprite2D = $body
-@onready var head: Sprite2D = $head
+@onready var head: AnimatedSprite2D = $head
 @onready var jump_buffer_timer: Timer = $jump_buffer_timer
 @onready var attack_collision: CollisionShape2D = $attack_area/attack_collision
 @onready var attack_sweep: AnimatedSprite2D = $attack_sweep
@@ -21,9 +21,13 @@ extends CharacterBody2D
 @onready var attack_right: Marker2D = $attack_right
 @onready var attack_left: Marker2D = $attack_left
 @onready var attack_area: Area2D = $attack_area
+@onready var level_cleared_anim: AnimationPlayer = $level_cleared_anim
 
 
+@export var can_move:bool = true
 
+func _ready() -> void:
+	Global.level_complete.connect(on_level_complete)
 
 
 func _physics_process(delta: float) -> void:
@@ -40,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
-	if direction:
+	if direction and can_move:
 		velocity.x = direction * move_speed 
 		movement_anim.play("walking")
 	else:
@@ -71,3 +75,10 @@ func get_custom_gravity() -> float:
 
 func attack():
 	attack_anim.play("attack")
+
+
+func on_level_complete():
+	await get_tree().create_timer(.5).timeout
+	level_cleared_anim.play("level_cleared")
+	await level_cleared_anim.animation_finished
+	get_tree().change_scene_to_file("res://bedroom.tscn")
