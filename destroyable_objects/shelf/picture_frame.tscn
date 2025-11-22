@@ -18,6 +18,8 @@ metadata/_custom_type_script = "uid://c0o2ewh0h7tb2"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3hk7e")
+region_enabled = true
+region_rect = Rect2(33, 35.5, 298, 303)
 
 [node name="shard_emitter" parent="Sprite2D" instance=ExtResource("3_m5nyy")]
 

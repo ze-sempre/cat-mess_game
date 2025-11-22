@@ -4,8 +4,7 @@
 
 [node name="shard_emitter" type="Node2D"]
 script = ExtResource("1_l82s0")
-nbr_of_shards = 10
-threshhold = 150.0
+nbr_of_shards = 50
 min_impulse = 400.0
 max_impulse = 800.0
 display_triangles = true

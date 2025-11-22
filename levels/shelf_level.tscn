@@ -26,3 +26,9 @@ position = Vector2(398, 1884)
 
 [node name="picture_frame" parent="." instance=ExtResource("3_c3rbb")]
 position = Vector2(1763, 1846)
+
+[node name="picture_frame2" parent="." instance=ExtResource("3_c3rbb")]
+position = Vector2(1221, 1846)
+
+[node name="picture_frame3" parent="." instance=ExtResource("3_c3rbb")]
+position = Vector2(879, 1846)
