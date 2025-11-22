@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8axar7vhwmot"]
+
+[ext_resource type="Shader" uid="uid://bouf4d3we3qde" path="res://circle_transition.gdshader" id="1_wbu5c"]
+[ext_resource type="Texture2D" uid="uid://dk6f5w1xcrmf4" path="res://assets/circle_mask.png" id="2_67c6v"]
+[ext_resource type="Script" uid="uid://erlq5j2v687p" path="res://ui/circle_transition_screen.gd" id="3_67c6v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mypif"]
+shader = ExtResource("1_wbu5c")
+shader_parameter/mask = ExtResource("2_67c6v")
+shader_parameter/scale = 0.0
+
+[sub_resource type="Animation" id="Animation_jmrrn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_idwqv"]
+resource_name = "fade_from_black"
+length = 1.1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.08333334, 1.0833334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mypif"]
+resource_name = "fade_to_black"
+length = 1.1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmrrn"]
+_data = {
+&"RESET": SubResource("Animation_jmrrn"),
+&"fade_from_black": SubResource("Animation_idwqv"),
+&"fade_to_black": SubResource("Animation_mypif")
+}
+
+[node name="circle_transition_screen" type="ColorRect"]
+material = SubResource("ShaderMaterial_mypif")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+script = ExtResource("3_67c6v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jmrrn")
+}

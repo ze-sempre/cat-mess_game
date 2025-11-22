@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bv87a5db0b5t4"]
+[gd_scene load_steps=16 format=3 uid="uid://bv87a5db0b5t4"]
 
 [ext_resource type="Script" uid="uid://c3m5qqgtt2ri2" path="res://bedroom.gd" id="1_iwj3i"]
 [ext_resource type="Texture2D" uid="uid://c2ditv7ecmukk" path="res://assets/room_walls.png" id="1_j12bj"]
@@ -14,8 +14,9 @@
 [ext_resource type="BitMap" uid="uid://bt7pikoooay70" path="res://assets/cardboard_box_clickmask.png" id="10_jsdaq"]
 [ext_resource type="Script" uid="uid://dix55ia86qduo" path="res://ui.gd" id="13_4cxt4"]
 [ext_resource type="Theme" uid="uid://c1qpbmpjcq403" path="res://ui/theme.tres" id="14_w5t4u"]
+[ext_resource type="PackedScene" uid="uid://b8axar7vhwmot" path="res://ui/circle_transition_screen.tscn" id="15_4cxt4"]
 
-[node name="bedroom" type="Control"]
+[node name="bedroom" type="Control" node_paths=PackedStringArray("circle_transitio_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwj3i")
+circle_transitio_screen = NodePath("circle_transition_screen")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -100,5 +102,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "that's a bed"
+
+[node name="circle_transition_screen" parent="." instance=ExtResource("15_4cxt4")]
+layout_mode = 1
+mouse_filter = 2
 
 [connection signal="pressed" from="shelf" to="." method="_on_shelf_pressed"]

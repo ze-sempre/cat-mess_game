@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 @export var move_speed = 300.0
 
@@ -27,8 +27,7 @@ extends CharacterBody2D
 @export var can_move:bool = true
 
 func _ready() -> void:
-	Global.level_complete.connect(on_level_complete)
-
+	Global.player = self
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -75,10 +74,3 @@ func get_custom_gravity() -> float:
 
 func attack():
 	attack_anim.play("attack")
-
-
-func on_level_complete():
-	await get_tree().create_timer(.5).timeout
-	level_cleared_anim.play("level_cleared")
-	await level_cleared_anim.animation_finished
-	get_tree().change_scene_to_file("res://bedroom.tscn")
