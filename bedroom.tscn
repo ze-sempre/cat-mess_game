@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bv87a5db0b5t4"]
+[gd_scene load_steps=15 format=3 uid="uid://bv87a5db0b5t4"]
 
 [ext_resource type="Script" uid="uid://c3m5qqgtt2ri2" path="res://bedroom.gd" id="1_iwj3i"]
 [ext_resource type="Texture2D" uid="uid://c2ditv7ecmukk" path="res://assets/room_walls.png" id="1_j12bj"]
@@ -13,29 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bpybipmb7g31m" path="res://assets/cardboard_box_hover.png" id="9_iwj3i"]
 [ext_resource type="BitMap" uid="uid://bt7pikoooay70" path="res://assets/cardboard_box_clickmask.png" id="10_jsdaq"]
 [ext_resource type="Script" uid="uid://dix55ia86qduo" path="res://ui.gd" id="13_4cxt4"]
-[ext_resource type="Texture2D" uid="uid://bt6bucj74mgsx" path="res://assets/panel_texture.png" id="13_w5t4u"]
-[ext_resource type="FontFile" uid="uid://ducxhd0pij1vr" path="res://GamjaFlower-Regular.ttf" id="14_w5t4u"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mypif"]
-content_margin_left = 32.0
-content_margin_top = 32.0
-content_margin_right = 32.0
-content_margin_bottom = 32.0
-texture = ExtResource("13_w5t4u")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-region_rect = Rect2(0, 0, 256, 256)
-
-[sub_resource type="Theme" id="Theme_iwj3i"]
-default_font = ExtResource("14_w5t4u")
-default_font_size = 128
-MarginContainer/constants/margin_bottom = 128
-MarginContainer/constants/margin_left = 128
-MarginContainer/constants/margin_right = 128
-MarginContainer/constants/margin_top = 128
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_mypif")
+[ext_resource type="Theme" uid="uid://c1qpbmpjcq403" path="res://ui/theme.tres" id="14_w5t4u"]
 
 [node name="bedroom" type="Control"]
 layout_mode = 3
@@ -105,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
-theme = SubResource("Theme_iwj3i")
+theme = ExtResource("14_w5t4u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
@@ -122,3 +100,5 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "that's a bed"
+
+[connection signal="pressed" from="shelf" to="." method="_on_shelf_pressed"]

@@ -342,6 +342,8 @@ _data = {
 }
 
 [node name="cat" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 2
 script = ExtResource("1_oqb4x")
 move_speed = 700.0
 jump_height = 300.0

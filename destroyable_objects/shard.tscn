@@ -1,10 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qnj0v8yknot3"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vnmwl"]
+[gd_scene format=3 uid="uid://qnj0v8yknot3"]
 
 [node name="shard" type="RigidBody2D"]
 collision_layer = 4
-physics_material_override = SubResource("PhysicsMaterial_vnmwl")
 sleeping = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]

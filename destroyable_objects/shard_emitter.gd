@@ -71,6 +71,7 @@ func _ready() -> void:
 			shard.get_node("Polygon2D").texture = texture
 			shard.get_node("Polygon2D").polygon = t
 			shard.get_node("Polygon2D").position = -center
+			shard.get_node("Polygon2D").texture_offset = texture.get_size()/2 
 			shard.gravity_scale = 0
 			#shrink polygon so that the collision shapes don't overlapp
 			var shrunk_triangles = Geometry2D.offset_polygon(t, -2)
@@ -86,7 +87,7 @@ func _ready() -> void:
 
 func add_shards() -> void:
 	for s in shards:
-		get_parent().add_child(s)
+		get_parent().get_parent().add_child(s)
 
 
 func shatter() -> void:
