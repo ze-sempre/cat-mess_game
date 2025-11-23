@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn3322sw2thx"]
+
+[ext_resource type="Script" uid="uid://c0o2ewh0h7tb2" path="res://destroyable_objects/destroyable_object_class.gd" id="1_5jjnb"]
+[ext_resource type="Texture2D" uid="uid://dcri4svka1oqr" path="res://assets/flower_vase.png" id="2_5jjnb"]
+[ext_resource type="PackedScene" uid="uid://l7h2f6nxoenf" path="res://destroyable_objects/shard_emitter.tscn" id="3_ft3uf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c82ku"]
+size = Vector2(253, 542)
+
+[node name="flower_vase" type="Node2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+script = ExtResource("1_5jjnb")
+collision_area = NodePath("Area2D")
+shard_emitter = NodePath("Sprite2D/shard_emitter")
+metadata/_custom_type_script = "uid://c0o2ewh0h7tb2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5jjnb")
+
+[node name="shard_emitter" parent="Sprite2D" instance=ExtResource("3_ft3uf")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c82ku")

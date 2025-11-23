@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc6sawyjiw5h3"]
+
+[ext_resource type="Script" uid="uid://c0o2ewh0h7tb2" path="res://destroyable_objects/destroyable_object_class.gd" id="1_mp0g7"]
+[ext_resource type="Texture2D" uid="uid://cks4nkk3r241s" path="res://assets/shroom_lamp.png" id="2_mp0g7"]
+[ext_resource type="PackedScene" uid="uid://l7h2f6nxoenf" path="res://destroyable_objects/shard_emitter.tscn" id="3_78kga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c82ku"]
+size = Vector2(288, 316)
+
+[node name="shroom_lamp" type="Node2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+script = ExtResource("1_mp0g7")
+collision_area = NodePath("Area2D")
+shard_emitter = NodePath("Sprite2D/shard_emitter")
+metadata/_custom_type_script = "uid://c0o2ewh0h7tb2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mp0g7")
+
+[node name="shard_emitter" parent="Sprite2D" instance=ExtResource("3_78kga")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c82ku")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8axar7vhwmot"]
 
 [ext_resource type="Shader" uid="uid://bouf4d3we3qde" path="res://circle_transition.gdshader" id="1_wbu5c"]
-[ext_resource type="Texture2D" uid="uid://dk6f5w1xcrmf4" path="res://assets/circle_mask.png" id="2_67c6v"]
+[ext_resource type="Texture2D" uid="uid://df80kkvu53w1q" path="res://assets/cat_mask.png" id="2_67c6v"]
 [ext_resource type="Script" uid="uid://erlq5j2v687p" path="res://ui/circle_transition_screen.gd" id="3_67c6v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mypif"]

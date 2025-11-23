@@ -10,12 +10,18 @@ func _ready() -> void:
 	status_container.scale = Vector2.ZERO
 	
 	bed.mouse_entered.connect(on_object_hover.bind(bed.object_name))
+	bed.focus_entered.connect(on_object_hover.bind(bed.object_name))
 	bed.mouse_exited.connect(on_object_hover_off)
+	bed.focus_exited.connect(on_object_hover_off)
 	
 	shelf.mouse_entered.connect(on_object_hover.bind(shelf.object_name))
+	shelf.focus_entered.connect(on_object_hover.bind(bed.object_name))
+	shelf.focus_exited.connect(on_object_hover_off)
 	shelf.mouse_exited.connect(on_object_hover_off)
 	
 	carboard_box.mouse_entered.connect(on_object_hover.bind(carboard_box.object_name))
+	carboard_box.focus_entered.connect(on_object_hover.bind(bed.object_name))
+	carboard_box.focus_exited.connect(on_object_hover_off)
 	carboard_box.mouse_exited.connect(on_object_hover_off)
 	
 	

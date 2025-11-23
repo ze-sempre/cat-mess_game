@@ -11,7 +11,8 @@ const cursor_normal = preload("res://assets/paw_cursor_normal.png")
 
 func _ready() -> void:
 	circle_transitio_screen.fade_from_black()
-
+	carboard_box.grab_focus()
+	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("left_mouse"):
 		Input.set_custom_mouse_cursor(cursor_click,Input.CURSOR_ARROW, Vector2(32,32))
