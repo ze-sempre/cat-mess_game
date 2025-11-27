@@ -45,6 +45,10 @@ tile_set = SubResource("TileSet_c3rbb")
 [node name="cat" parent="." instance=ExtResource("2_mwfpx")]
 position = Vector2(398, 2016)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="cat"]
+position = Vector2(-4, -102)
+rect = Rect2(-102, -31, 175, 62)
+
 [node name="destroyable_object_container" type="Node2D" parent="."]
 
 [node name="picture_frame" parent="destroyable_object_container" instance=ExtResource("3_c3rbb")]
@@ -79,3 +83,5 @@ position = Vector2(19, 3923)
 
 [node name="picture_frame4" parent="destroyable_object_container" instance=ExtResource("3_c3rbb")]
 position = Vector2(-300, 3867)
+
+[connection signal="screen_exited" from="cat/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
