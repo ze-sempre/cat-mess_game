@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 class_name DestroyableObjectClass
 
 signal object_destroyed
@@ -17,5 +17,6 @@ func on_collision_area_entered(area: Area2D):
 			shard_emitter.shatter()
 		object_destroyed.emit()
 		destroyed = true
+		set_collision_layer_value(3, false)
 
 	

@@ -7,7 +7,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c82ku"]
 size = Vector2(288, 316)
 
-[node name="shroom_lamp" type="Node2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+[node name="shroom_lamp" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+collision_layer = 4
 script = ExtResource("1_mp0g7")
 collision_area = NodePath("Area2D")
 shard_emitter = NodePath("Sprite2D/shard_emitter")
@@ -23,4 +24,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c82ku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c82ku")

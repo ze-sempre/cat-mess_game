@@ -7,7 +7,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgfw"]
 size = Vector2(264, 169)
 
-[node name="book_stack" type="Node2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+[node name="book_stack" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+collision_layer = 4
 script = ExtResource("1_klqu6")
 collision_area = NodePath("Area2D")
 shard_emitter = NodePath("Sprite2D/shard_emitter")
@@ -23,5 +24,9 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_xbgfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_xbgfw")

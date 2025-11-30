@@ -10,7 +10,8 @@ size = Vector2(237, 290)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj3pw"]
 size = Vector2(46.337265, 158.64906)
 
-[node name="picture_frame" type="Node2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+[node name="picture_frame" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+collision_layer = 4
 script = ExtResource("1_cj3pw")
 collision_area = NodePath("collision_area")
 shard_emitter = NodePath("Sprite2D/shard_emitter")
@@ -35,4 +36,14 @@ shape = SubResource("RectangleShape2D_3hk7e")
 position = Vector2(104.55413, 75.938065)
 rotation = -0.34906584
 scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_cj3pw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-22.5, 6)
+shape = SubResource("RectangleShape2D_3hk7e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(104.55413, 75.938065)
+rotation = -0.34906584
+scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_cj3pw")
