@@ -605,6 +605,7 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_oqb4x")
 move_speed = 900.0
+dash_impulse = 2500.0
 jump_height = 600.0
 jump_time_to_peak = 0.5
 jump_time_to_descend = 0.4

@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var move_speed = 300.0
+@export var dash_impulse: float = 1500.0
 
 @export var jump_height: float
 @export var jump_time_to_peak: float
@@ -26,6 +27,11 @@ class_name Player
 
 @export var can_move:bool = true
 
+var tween: Tween
+var dash_velocity:= 0.0
+var dash_count := 0
+
+
 func _ready() -> void:
 	Global.player = self
 
@@ -44,7 +50,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction and can_move:
-		velocity.x = direction * move_speed 
+		velocity.x = direction * (move_speed + dash_velocity)
 		movement_anim.play("walking")
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
@@ -54,6 +60,17 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	
+	if !is_on_floor() and Input.is_action_just_pressed("attack") and dash_count == 0:
+		dash_count = 1
+		dash_velocity = dash_impulse
+		if tween:
+			tween.stop()
+		tween = create_tween()
+		tween.tween_property(self, "dash_velocity", 0, 0.4).set_ease(Tween.EASE_OUT)
+	
+	if is_on_floor():
+		dash_count = 0
 	
 	if direction > 0.0:
 		body.flip_h = true
