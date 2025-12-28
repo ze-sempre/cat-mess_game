@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b4tunvm18kpk2"]
+[gd_scene load_steps=44 format=3 uid="uid://b4tunvm18kpk2"]
 
 [ext_resource type="Script" uid="uid://cpvocibyediho" path="res://player/cat.gd" id="1_oqb4x"]
 [ext_resource type="Texture2D" uid="uid://bo8ilbbdx5bli" path="res://assets/cat_body.png" id="2_jopsd"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://brkjp2j7yhufi" path="res://assets/cat_head.png" id="3_tb7al"]
 [ext_resource type="Texture2D" uid="uid://dt7c5lxyoevfu" path="res://assets/cat_attack_sweep.png" id="4_tb7al"]
 [ext_resource type="Texture2D" uid="uid://com4esps268e5" path="res://assets/cat_head_smile.png" id="5_f2ewx"]
+[ext_resource type="AudioStream" uid="uid://rp7ynijot8xy" path="res://sound/sfx/player/slash_attack.wav" id="7_f2ewx"]
+[ext_resource type="AudioStream" uid="uid://8d8fcs4yru87" path="res://sound/sfx/player/jumping.wav" id="8_1ndg2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqb4x"]
 radius = 55.0
@@ -672,3 +674,11 @@ position = Vector2(-336, -90)
 libraries = {
 &"": SubResource("AnimationLibrary_1ndg2")
 }
+
+[node name="slash_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f2ewx")
+bus = &"sfx"
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_1ndg2")
+bus = &"sfx"

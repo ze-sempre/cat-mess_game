@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwnx0yio6aku"
-path="res://.godot/imported/picture_frame.png-3a27ce47d3ba7dcb63ab6054305b4714.ctex"
+uid="uid://dnvrwmgmgs06s"
+path="res://.godot/imported/flower_vase_2.png-c7d35f012c75c85f4ee455421a2cd8aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/bedroom/shelf/picture_frame.png"
-dest_files=["res://.godot/imported/picture_frame.png-3a27ce47d3ba7dcb63ab6054305b4714.ctex"]
+source_file="res://assets/levels/bedroom/shelf/flower_vase_2.png"
+dest_files=["res://.godot/imported/flower_vase_2.png-c7d35f012c75c85f4ee455421a2cd8aa.ctex"]
 
 [params]
 

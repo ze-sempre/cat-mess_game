@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csbir3x2hamg4"
-path="res://.godot/imported/cactus.png-366c3b67d0b3dfc72dbc4a57fb23b7b9.ctex"
+path="res://.godot/imported/cactus.png-709befa06b642ce4f9d9da9e5f80bd3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cactus.png"
-dest_files=["res://.godot/imported/cactus.png-366c3b67d0b3dfc72dbc4a57fb23b7b9.ctex"]
+source_file="res://assets/levels/bedroom/shelf/cactus.png"
+dest_files=["res://.godot/imported/cactus.png-709befa06b642ce4f9d9da9e5f80bd3c.ctex"]
 
 [params]
 

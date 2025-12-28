@@ -3,12 +3,12 @@
 importer="bitmap"
 type="BitMap"
 uid="uid://bm52o7e36wjhh"
-path="res://.godot/imported/shelf_clickmask.png-5b2c3c2f46641b8b4736ebdb160c66ad.res"
+path="res://.godot/imported/shelf_clickmask.png-91418c93397c626c5b662badafad87ad.res"
 
 [deps]
 
-source_file="res://assets/shelf_clickmask.png"
-dest_files=["res://.godot/imported/shelf_clickmask.png-5b2c3c2f46641b8b4736ebdb160c66ad.res"]
+source_file="res://assets/levels/bedroom/shelf/shelf_clickmask.png"
+dest_files=["res://.godot/imported/shelf_clickmask.png-91418c93397c626c5b662badafad87ad.res"]
 
 [params]
 

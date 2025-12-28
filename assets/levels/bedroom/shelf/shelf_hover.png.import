@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iybs3is2fuwa"
-path="res://.godot/imported/shelf_hover.png-8cc6a869aee71bc45ab5b5db9137fb54.ctex"
+path="res://.godot/imported/shelf_hover.png-eef2a70402488d7f1b205f1de30107c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shelf_hover.png"
-dest_files=["res://.godot/imported/shelf_hover.png-8cc6a869aee71bc45ab5b5db9137fb54.ctex"]
+source_file="res://assets/levels/bedroom/shelf/shelf_hover.png"
+dest_files=["res://.godot/imported/shelf_hover.png-eef2a70402488d7f1b205f1de30107c1.ctex"]
 
 [params]
 

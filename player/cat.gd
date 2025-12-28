@@ -23,6 +23,8 @@ class_name Player
 @onready var attack_left: Marker2D = $attack_left
 @onready var attack_area: Area2D = $attack_area
 @onready var level_cleared_anim: AnimationPlayer = $level_cleared_anim
+@onready var slash_sfx: AudioStreamPlayer = $slash_sfx
+@onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 
 
 @export var can_move:bool = true
@@ -44,6 +46,8 @@ func _physics_process(delta: float) -> void:
 		jump_buffer_timer.start()
 		
 	if is_on_floor() and !jump_buffer_timer.is_stopped():
+		jump_sfx.pitch_scale = randf_range(0.95, 1.05)
+		jump_sfx.play()
 		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
@@ -91,3 +95,5 @@ func get_custom_gravity() -> float:
 
 func attack():
 	attack_anim.play("attack")
+	slash_sfx.pitch_scale = randf_range(0.95, 1.05)
+	slash_sfx.play()

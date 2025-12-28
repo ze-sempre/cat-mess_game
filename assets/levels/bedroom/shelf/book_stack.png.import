@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmg0142vawqrn"
-path="res://.godot/imported/book_stack.png-ebcccc06c39474ba0f1eb71ddac20189.ctex"
+path="res://.godot/imported/book_stack.png-f59b14f3c8500104b2807b709c134f02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/book_stack.png"
-dest_files=["res://.godot/imported/book_stack.png-ebcccc06c39474ba0f1eb71ddac20189.ctex"]
+source_file="res://assets/levels/bedroom/shelf/book_stack.png"
+dest_files=["res://.godot/imported/book_stack.png-f59b14f3c8500104b2807b709c134f02.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwnx0yio6aku"
-path="res://.godot/imported/picture_frame.png-3a27ce47d3ba7dcb63ab6054305b4714.ctex"
+uid="uid://dwbtp1jh2kb3f"
+path="res://.godot/imported/book_stack_2.png-b8851fc1fc734552e136b0d9ef2fb102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/bedroom/shelf/picture_frame.png"
-dest_files=["res://.godot/imported/picture_frame.png-3a27ce47d3ba7dcb63ab6054305b4714.ctex"]
+source_file="res://assets/levels/bedroom/shelf/book_stack_2.png"
+dest_files=["res://.godot/imported/book_stack_2.png-b8851fc1fc734552e136b0d9ef2fb102.ctex"]
 
 [params]
 

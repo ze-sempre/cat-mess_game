@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwnx0yio6aku"
-path="res://.godot/imported/picture_frame.png-3a27ce47d3ba7dcb63ab6054305b4714.ctex"
+uid="uid://cbo8r38f7ahss"
+path="res://.godot/imported/picture_frame_2.png-560d8331314237ff6b12b00b0d02369a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/bedroom/shelf/picture_frame.png"
-dest_files=["res://.godot/imported/picture_frame.png-3a27ce47d3ba7dcb63ab6054305b4714.ctex"]
+source_file="res://assets/levels/bedroom/shelf/picture_frame_2.png"
+dest_files=["res://.godot/imported/picture_frame_2.png-560d8331314237ff6b12b00b0d02369a.ctex"]
 
 [params]
 
