@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b4tunvm18kpk2"]
+[gd_scene load_steps=45 format=3 uid="uid://b4tunvm18kpk2"]
 
 [ext_resource type="Script" uid="uid://cpvocibyediho" path="res://player/cat.gd" id="1_oqb4x"]
 [ext_resource type="Texture2D" uid="uid://bo8ilbbdx5bli" path="res://assets/cat_body.png" id="2_jopsd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://com4esps268e5" path="res://assets/cat_head_smile.png" id="5_f2ewx"]
 [ext_resource type="AudioStream" uid="uid://rp7ynijot8xy" path="res://sound/sfx/player/slash_attack.wav" id="7_f2ewx"]
 [ext_resource type="AudioStream" uid="uid://8d8fcs4yru87" path="res://sound/sfx/player/jumping.wav" id="8_1ndg2"]
+[ext_resource type="AudioStream" uid="uid://c20fporarduoy" path="res://sound/sfx/player/colliding_w_floor.wav" id="9_pstm5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqb4x"]
 radius = 55.0
@@ -681,4 +682,10 @@ bus = &"sfx"
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_1ndg2")
+volume_db = -5.0
+bus = &"sfx"
+
+[node name="colliding_w_floor_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_pstm5")
+volume_db = -5.0
 bus = &"sfx"

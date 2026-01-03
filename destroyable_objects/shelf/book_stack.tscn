@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4abvvbnss7kk"]
+[gd_scene load_steps=6 format=3 uid="uid://d4abvvbnss7kk"]
 
 [ext_resource type="Script" uid="uid://c0o2ewh0h7tb2" path="res://destroyable_objects/destroyable_object_class.gd" id="1_klqu6"]
-[ext_resource type="Texture2D" uid="uid://dmg0142vawqrn" path="res://assets/book_stack.png" id="2_nlnml"]
+[ext_resource type="Texture2D" uid="uid://dmg0142vawqrn" path="res://assets/levels/bedroom/shelf/book_stack.png" id="2_nlnml"]
 [ext_resource type="PackedScene" uid="uid://l7h2f6nxoenf" path="res://destroyable_objects/shard_emitter.tscn" id="3_8acvr"]
+[ext_resource type="AudioStream" uid="uid://2f7w0gj0dwm5" path="res://sound/sfx/bedroom/shelf/book_stack.wav" id="4_nlnml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgfw"]
 size = Vector2(264, 169)
 
-[node name="book_stack" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+[node name="book_stack" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter", "breaking_sfx")]
 collision_layer = 4
 script = ExtResource("1_klqu6")
 collision_area = NodePath("Area2D")
 shard_emitter = NodePath("Sprite2D/shard_emitter")
+breaking_sfx = NodePath("breaking_sfx")
 metadata/_custom_type_script = "uid://c0o2ewh0h7tb2"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -30,3 +32,7 @@ shape = SubResource("RectangleShape2D_xbgfw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_xbgfw")
+
+[node name="breaking_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nlnml")
+bus = &"sfx"

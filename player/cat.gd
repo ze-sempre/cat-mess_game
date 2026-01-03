@@ -25,6 +25,7 @@ class_name Player
 @onready var level_cleared_anim: AnimationPlayer = $level_cleared_anim
 @onready var slash_sfx: AudioStreamPlayer = $slash_sfx
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
+@onready var colliding_w_floor_sfx: AudioStreamPlayer = $colliding_w_floor_sfx
 
 
 @export var can_move:bool = true
@@ -32,7 +33,6 @@ class_name Player
 var tween: Tween
 var dash_velocity:= 0.0
 var dash_count := 0
-
 
 func _ready() -> void:
 	Global.player = self
@@ -45,20 +45,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer_timer.start()
 		
-	if is_on_floor() and !jump_buffer_timer.is_stopped():
+	var initiating_jump := is_on_floor() and !jump_buffer_timer.is_stopped()
+	if initiating_jump:
 		jump_sfx.pitch_scale = randf_range(0.95, 1.05)
 		jump_sfx.play()
 		velocity.y = jump_velocity
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction and can_move:
 		velocity.x = direction * (move_speed + dash_velocity)
-		movement_anim.play("walking")
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
-		movement_anim.play("idle")
 		
 	move_and_slide()
 	
@@ -75,6 +73,10 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		dash_count = 0
+		#colliding_w_floor_sfx.pitch_scale = randf_range(0.95, 1.05)
+		#colliding_w_floor_sfx.play()
+	
+	
 	
 	if direction > 0.0:
 		body.flip_h = true
@@ -91,7 +93,6 @@ func _physics_process(delta: float) -> void:
 		
 func get_custom_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
-
 
 func attack():
 	attack_anim.play("attack")

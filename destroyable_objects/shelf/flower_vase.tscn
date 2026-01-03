@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn3322sw2thx"]
+[gd_scene load_steps=6 format=3 uid="uid://cn3322sw2thx"]
 
 [ext_resource type="Script" uid="uid://c0o2ewh0h7tb2" path="res://destroyable_objects/destroyable_object_class.gd" id="1_5jjnb"]
-[ext_resource type="Texture2D" uid="uid://dcri4svka1oqr" path="res://assets/flower_vase.png" id="2_5jjnb"]
+[ext_resource type="Texture2D" uid="uid://dcri4svka1oqr" path="res://assets/levels/bedroom/shelf/flower_vase.png" id="2_5jjnb"]
 [ext_resource type="PackedScene" uid="uid://l7h2f6nxoenf" path="res://destroyable_objects/shard_emitter.tscn" id="3_ft3uf"]
+[ext_resource type="AudioStream" uid="uid://clflpygcvyvx1" path="res://sound/sfx/bedroom/shelf/flower_vase.wav" id="4_47s5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c82ku"]
 size = Vector2(253, 542)
 
-[node name="flower_vase" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter")]
+[node name="flower_vase" type="RigidBody2D" node_paths=PackedStringArray("collision_area", "shard_emitter", "breaking_sfx")]
 collision_layer = 4
 script = ExtResource("1_5jjnb")
 collision_area = NodePath("Area2D")
 shard_emitter = NodePath("Sprite2D/shard_emitter")
+breaking_sfx = NodePath("breaking_sfx")
 metadata/_custom_type_script = "uid://c0o2ewh0h7tb2"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -28,3 +30,7 @@ shape = SubResource("RectangleShape2D_c82ku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c82ku")
+
+[node name="breaking_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_47s5k")
+bus = &"sfx"
