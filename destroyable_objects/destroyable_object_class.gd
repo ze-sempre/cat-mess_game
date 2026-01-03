@@ -6,11 +6,16 @@ signal object_destroyed
 @export var collision_area: Area2D
 @export var shard_emitter: ShardEmitter
 @export var breaking_sfx: AudioStreamPlayer2D
-
+@export var sprite_variant: CompressedTexture2D 
 var destroyed: bool = false
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 func _ready() -> void:
 	collision_area.area_entered.connect(on_collision_area_entered)
 	
+	if sprite_variant != null:
+		sprite_2d.texture = sprite_variant
 	
 func on_collision_area_entered(area: Area2D):
 	if !destroyed:

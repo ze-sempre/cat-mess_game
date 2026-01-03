@@ -28,7 +28,7 @@ var shards = []
 func _ready() -> void:
 	delete_timer.timeout.connect(_on_DeleteTimer_timeout)
 	
-	
+	await get_tree().create_timer(.2).timeout
 	if get_parent() is Sprite2D:
 		var _rect = get_parent().get_rect()
 		var points = []

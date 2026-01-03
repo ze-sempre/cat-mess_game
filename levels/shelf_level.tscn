@@ -1,16 +1,19 @@
-[gd_scene load_steps=14 format=4 uid="uid://bfsvbtani7byu"]
+[gd_scene load_steps=17 format=4 uid="uid://bfsvbtani7byu"]
 
-[ext_resource type="Texture2D" uid="uid://cvgfi0dqe1rni" path="res://assets/tilemap_test.png" id="1_or7ay"]
+[ext_resource type="Texture2D" uid="uid://cvgfi0dqe1rni" path="res://assets/levels/bedroom/shelf/tilemap_test.png" id="1_or7ay"]
 [ext_resource type="Script" uid="uid://ngqodqdyaxfi" path="res://levels/shelf_level.gd" id="1_spdax"]
 [ext_resource type="PackedScene" uid="uid://b4tunvm18kpk2" path="res://player/cat.tscn" id="2_mwfpx"]
 [ext_resource type="PackedScene" uid="uid://6j4y0kfxlwaw" path="res://destroyable_objects/shelf/picture_frame.tscn" id="3_c3rbb"]
 [ext_resource type="PackedScene" uid="uid://b8axar7vhwmot" path="res://ui/circle_transition_screen.tscn" id="3_qe653"]
 [ext_resource type="PackedScene" uid="uid://exmfxcw7kk5n" path="res://ui/level_ui.tscn" id="4_68l0c"]
 [ext_resource type="PackedScene" uid="uid://d4abvvbnss7kk" path="res://destroyable_objects/shelf/book_stack.tscn" id="7_qejwv"]
+[ext_resource type="Texture2D" uid="uid://cbo8r38f7ahss" path="res://assets/levels/bedroom/shelf/picture_frame_2.png" id="7_xrapg"]
+[ext_resource type="Texture2D" uid="uid://ciwqgkb0qjlj" path="res://assets/levels/bedroom/shelf/picture_frame_3.png" id="8_6mswb"]
 [ext_resource type="PackedScene" uid="uid://dr24twwqy3n8p" path="res://destroyable_objects/shelf/cactus_1.tscn" id="8_80q7h"]
 [ext_resource type="PackedScene" uid="uid://bii4hn3qrpjfe" path="res://destroyable_objects/shelf/cactus_2.tscn" id="9_30t1x"]
 [ext_resource type="PackedScene" uid="uid://cn3322sw2thx" path="res://destroyable_objects/shelf/flower_vase.tscn" id="10_xrapg"]
 [ext_resource type="PackedScene" uid="uid://bc6sawyjiw5h3" path="res://destroyable_objects/shelf/shroom_lamp.tscn" id="11_6mswb"]
+[ext_resource type="Texture2D" uid="uid://bwgmjen1nswt8" path="res://assets/levels/bedroom/shelf/picture_frame_4.png" id="14_ri11s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwfpx"]
 texture = ExtResource("1_or7ay")
@@ -53,12 +56,14 @@ rect = Rect2(-102, -31, 175, 62)
 
 [node name="picture_frame" parent="destroyable_object_container" instance=ExtResource("3_c3rbb")]
 position = Vector2(4240, 1886)
+sprite_variant = ExtResource("7_xrapg")
 
 [node name="picture_frame2" parent="destroyable_object_container" instance=ExtResource("3_c3rbb")]
 position = Vector2(2077, 1886)
 
 [node name="picture_frame3" parent="destroyable_object_container" instance=ExtResource("3_c3rbb")]
 position = Vector2(6927, 1886)
+sprite_variant = ExtResource("8_6mswb")
 
 [node name="book_stack" parent="destroyable_object_container" instance=ExtResource("7_qejwv")]
 position = Vector2(4391, 2487)
@@ -83,5 +88,6 @@ position = Vector2(19, 3923)
 
 [node name="picture_frame4" parent="destroyable_object_container" instance=ExtResource("3_c3rbb")]
 position = Vector2(-300, 3867)
+sprite_variant = ExtResource("14_ri11s")
 
 [connection signal="screen_exited" from="cat/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
